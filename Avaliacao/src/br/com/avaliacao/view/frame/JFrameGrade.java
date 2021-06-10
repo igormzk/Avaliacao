@@ -248,7 +248,7 @@ public class JFrameGrade extends JFrame {
 				public void focusGained(FocusEvent e) {
 					try
 			        {
-						if (!txtGrade1.getText().isEmpty()) {
+						if (!txtGrade4.getText().isEmpty()) {
 			            KeyEvent ke = new KeyEvent(e.getComponent(), KeyEvent.KEY_PRESSED,
 			                    System.currentTimeMillis(), InputEvent.CTRL_MASK,
 			                    KeyEvent.VK_F1, KeyEvent.CHAR_UNDEFINED);
@@ -269,7 +269,7 @@ public class JFrameGrade extends JFrame {
 		return txtGrade4;
 	}
 	private JLabel getLblAvg() {
-			lblAvg = new JLabel("MÈdia");
+			lblAvg = new JLabel("M√©dia");
 			lblAvg.setBounds(393, 97, 46, 14);
 		return lblAvg;
 	}
@@ -339,7 +339,7 @@ public class JFrameGrade extends JFrame {
 	}
 
 	/**
-	 * MÈtodo para preencher um objeto do tipo nota
+	 * M√©todo para preencher um objeto do tipo nota
 	 * @return Grade - notas com o que foi preenchido na tela
 	 */
 	private Grade fill() {
@@ -367,7 +367,7 @@ public class JFrameGrade extends JFrame {
 	}
 	
 	/**
-	 * MÈtodo que preenche os campos da tela de uma nota que j· foi salva anteriormente
+	 * M√©todo que preenche os campos da tela de uma nota que j√° foi salva anteriormente
 	 * @param g Grade - Nota salva
 	 */
 	private void displayGrade(Grade g) {
@@ -386,13 +386,13 @@ public class JFrameGrade extends JFrame {
 			new GradeDAO().delete(tblModelGrade.getList().get(row).getId());
 			tblModelGrade.onRemove(row);
 		} else {
-			JOptionPane.showMessageDialog(this, "Selecione um registro para excluir", "ValidaÁ„o!", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this, "Selecione um registro para excluir", "Valida√ß√£o!", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	
 	/**
-	 * MÈtodo que ir· salvar as notas se os campos forem preenchidos corretamente.
-	 * Caso ocorra algum problema de validaÁ„o as informaÁıes dos campos n„o ser„o limpas
+	 * M√©todo que ir√° salvar as notas se os campos forem preenchidos corretamente.
+	 * Caso ocorra algum problema de valida√ß√£o as informa√ß√µes dos campos n√£o ser√£o limpas
 	 * @return boolean - salvou corretamente
 	 */
 	private boolean saveGrade() {
@@ -407,14 +407,14 @@ public class JFrameGrade extends JFrame {
 			}
 			return true;
 		} else {
-			JOptionPane.showMessageDialog(this, str, "ValidaÁ„o!", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this, str, "Valida√ß√£o!", JOptionPane.ERROR_MESSAGE);
 			return false;
 		}
 	}
 	
 	/**
-	 * MÈtodo que verifica se todas as notas informadas est„o preenchidas corretamente
-	 * @return boolean - Notas todas preenchidas para c·lculo da mÈdia
+	 * M√©todo que verifica se todas as notas informadas est√£o preenchidas corretamente
+	 * @return boolean - Notas todas preenchidas para c√°lculo da m√©dia
 	 */
 	private boolean canCalcAvg() {
 		if (txtGrade1.getText().isEmpty() || txtGrade2.getText().isEmpty() || txtGrade3.getText().isEmpty() || txtGrade4.getText().isEmpty()) {
@@ -441,7 +441,7 @@ public class JFrameGrade extends JFrame {
 	}
 	
 	/**
-	 * MÈtodo que mostrar· a mÈdia e a situaÁ„o do estudante
+	 * M√©todo que mostrar√° a m√©dia e a situa√ß√£o do estudante
 	 */
 	private void displayAvgStatus() {
 		Grade g = fill();
@@ -458,11 +458,11 @@ public class JFrameGrade extends JFrame {
 	}
 	
 	/**
-	 * MÈtodo que mostrar· ao usu·rio uma nota incorreta
-	 * @param txtGrade JTextField - campo que contÍm uma nota
+	 * M√©todo que mostrar√° ao usu√°rio uma nota incorreta
+	 * @param txtGrade JTextField - campo que cont√™m uma nota
 	 */
 	private void requestFocus(JTextField txtGrade) {
-		txtGrade.setToolTipText("<HTML><p style=\"color:red\">A nota n„o pode ser maior que 10 (dez)</p></HTML>");
+		txtGrade.setToolTipText("<HTML><p style=\"color:red\">A nota n√£o pode ser maior que 10 (dez)</p></HTML>");
 		txtGrade.requestFocus();
 	}
 	
